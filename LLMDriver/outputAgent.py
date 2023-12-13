@@ -12,7 +12,7 @@ from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from scenario.scenario import Scenario
 
 
-class OutputParser:
+class OutputParser: # 输出解释器
     def __init__(self, sce: Scenario,llm, temperature: float = 0.0) -> None:
         self.sce = sce
         self.temperature = temperature

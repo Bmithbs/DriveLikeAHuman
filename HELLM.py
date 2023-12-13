@@ -65,7 +65,7 @@ config = {
     "render_agent": True,
 }
 
-
+# define an environment of highway-v0
 env = gym.make('highway-v0', render_mode="rgb_array")
 env.configure(config)
 env = RecordVideo(
@@ -80,7 +80,7 @@ env.render()
 if not os.path.exists('results-db/'):
     os.mkdir('results-db')
 database = f"results-db/highwayv0.db"
-sce = Scenario(vehicleCount, database)
+sce = Scenario(vehicleCount, database)  # what the scenario is
 toolModels = [
     getAvailableActions(env),
     getAvailableLanes(sce),
@@ -92,7 +92,7 @@ toolModels = [
     isActionSafe(),
 ]
 DA = DriverAgent(llm, toolModels, sce, verbose=True)
-outputParser = OutputParser(sce, llm)
+outputParser = OutputParser(sce, llm)  # how to parse the output
 output = None
 done = truncated = False
 frame = 0
