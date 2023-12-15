@@ -143,7 +143,7 @@ class isChangeLaneConflictWithCar:
         self.VEHICLE_LENGTH = 5.0
 
     @prompts(name='Is Change Lane Confict With Car',
-             description="""useful when you want to know whether change lane to a specific lane is confict with a specific car, ONLY when your decision is change_lane_left or change_lane_right. The input to this tool should be a string of a comma separated string of two, representing the id of the lane you want to change to and the id of the car you want to check.""")
+             description="""useful when you want to know whether change lane to a specific lane is confict with a specific car, ONLY when your decision is change_lane_left or change_lane_right. The input to this tool should be a string of a comma separated string of two (e.g., lane_2, veh2), representing the id of the lane (e.g., lane_2) you want to change to and the id of the car (e.g., veh2) you want to check. Emphasize again, the input to this tool should be a string of a comma separated string of two, just like 'lane_2, veh2'.""")
     def inference(self, inputs: str) -> str:
         laneID, vid = inputs.replace(' ', '').split(',')
         if vid not in self.sce.vehicles:

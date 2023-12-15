@@ -6,6 +6,7 @@ from collections import defaultdict
 from rich import print
 
 
+
 class CustomHandler(BaseCallbackHandler):
     def __init__(self) -> None:
         super().__init__()
